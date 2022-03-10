@@ -51,12 +51,25 @@ const firebaseConfig = {
       let target = e.target as HTMLLIElement
       const id: string = target.parentElement.getAttribute('data-id') // Já está pegando o id de cada li // value does not exist on type string
       
-      const docRef = doc(db, 'cafes', id)
+      const docRef = colRef 
       
-      deleteDoc(docRef)
-    })
-  }
+    //   deleteDoc(docRef).then(() => {
+    //     console.log('EUREKA!')
+    //   }).catch((err) => {
+    //     console.log(err.message)
+    //   })
+    // })
+    deletePlease(docRef, id)
+  })}
 
+  function deletePlease(d: any, id: any) {
+     d = doc(db, 'cafes', id) 
+      deleteDoc(d).then(() => {
+        console.log('FINALLY!!!!!!!!!!!!!!!')
+      }).catch((err) => {
+        console.log(err.message)
+      })
+  }
       
 
 
