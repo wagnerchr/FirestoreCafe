@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { 
-    getFirestore, collection, getDocs,
+    getFirestore, collection, getDocs, onSnapshot,
     addDoc, deleteDoc, doc, updateDoc, getDoc
 } from "firebase/firestore"
 import { forEachChild } from "typescript";
@@ -21,6 +21,7 @@ const firebaseConfig = {
 
 // Collection
   const colRef = collection(db, 'cafes')
+  const cafeList = document.getElementById('cafe-list');
 
 // ---------------------------------
 // Elementos HTML
@@ -53,14 +54,9 @@ const firebaseConfig = {
       
       const docRef = colRef 
       
-    //   deleteDoc(docRef).then(() => {
-    //     console.log('EUREKA!')
-    //   }).catch((err) => {
-    //     console.log(err.message)
-    //   })
-    // })
-    deletePlease(docRef, id)
-  })}
+      deletePlease(docRef, id)
+  })
+}
 
   function deletePlease(d: any, id: any) {
      d = doc(db, 'cafes', id) 
@@ -74,22 +70,29 @@ const firebaseConfig = {
 
 
 
-const cafeList = document.getElementById('cafe-list');
+
 // const form: any = document.getElementById('add-cafe-form') as HTMLFormElement;
 
 // Pegando Dados
-  getDocs(colRef).then((snapshot) => {
-    // let cafes:any = []
+        // getDocs(colRef).then((snapshot) => {
+       // let cafes:any = []
+      // cafes.push({ ...doc.data(), id: doc.id })
+     // }) console.log(cafes)
 
-    snapshot.docs.forEach((doc) => {
-        renderCafe(doc)
-        // cafes.push({ ...doc.data(), id: doc.id })
-    })
-    // console.log(cafes)
-  }).catch((err) => {
-      console.log(err.message)
+// Pegando dados em tempo real
+  onSnapshot(colRef, (snapshot) => { // função irá rodar sempre que houver uma mudança
+    let changes:any = snapshot.docChanges()
+        
+    for (let change of changes) { 
+      if (change.type == 'added') {
+        renderCafe(change.doc)
+      } else if (change.type == 'removed') {
+        let li = cafeList.querySelector('[data-id=' + change.doc.id + ']')
+        cafeList.removeChild(li)
+      }
+    }
   })
-
+      
 // Adicionando Dados
   const addCafe: any = document.getElementById('add-cafe-form') as HTMLFormElement;
   addCafe.addEventListener('submit', (e: any) => {
