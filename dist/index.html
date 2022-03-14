@@ -7,18 +7,42 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
 </head>
 <body>
 
-        <h1>Cloud Cafe</h1>
+<!-- NAVBAR -->
+    <header>
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="nav-buttons">
+                <li class="logged-in">
+                    <a href="#" data-target="modal-account">Account</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#" id="logout">Logout</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#" data-target="modal-create">Create Guide</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#" data-target="modal-login">Login</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#" data-target="modal-signup">Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>  
+
+      <h1 class="title">Cloud Cafe</h1>
 
         <div class="content">
-
             <form id="add-cafe-form">
                 <input type="text" name="name" placeholder="Cafe name">
                 <input type="text" name="local" placeholder="Cafe locality">
-
-                <button>Add Cafe</button>
+                <button class="add-cafe">Add Cafe</button>
             </form>
             <ul id="cafe-list"></ul>
 

@@ -1,15 +1,38 @@
-body{
+body {
+    margin: 0;
     background: #eab0dc;
     font-family: ubuntu;
 }
 
-h1{
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2.5px 10%;
+
+    background-color: purple;
+}
+
+.nav-buttons li {
+    display: inline-block;
+}
+.nav-buttons li a {
+    transition: all 0.3s ease 0s;
+}
+.nav-buttons li a:hover {
+    color: #0088a9;
+}
+
+
+.title{
     color: #fff;
     font-size: 64px;
     letter-spacing: 2px;
     margin-top: 80px;
     text-align: center;
 }
+
+
 
 .content{
     background: #fff;
@@ -24,8 +47,12 @@ ul{
     list-style-type: none;
     padding: 0;
 }
-
-li{
+.data-id {
+    background-color: #555;
+    color: pink;
+    height: 32141px;
+}
+li  {
     padding: 20px;
     background: #f6f6f6;
     font-size: 20px;
@@ -88,7 +115,7 @@ form:after{
     display: block;
 }
 
-button{
+.add-cafe{
     border: 0;
     background: #fff;
     border-radius: 10px;

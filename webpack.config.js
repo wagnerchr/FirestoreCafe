@@ -3,12 +3,12 @@ const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/firestore.ts',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   plugins: [new Dotenv()],
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts?$/,
         loader: 'ts-loader',
         // use: 'ts-loader',
         exclude: /node_modules/,
