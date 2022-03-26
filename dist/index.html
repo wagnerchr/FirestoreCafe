@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="style.css">  
+    
 </head>
 <body>
 
@@ -19,26 +19,18 @@
                 <li class="logged-in">
                     <a href="#" data-target="modal-account">Account</a>
                 </li>
-                <li class="logged-in">
-                    <a href="#" id="logout">Logout</a>
-                </li>
-                <li class="logged-in">
-                    <a href="#" data-target="modal-create">Create Guide</a>
-                </li>
                 <li class="logged-out">
                     <a href="#" data-target="modal-login">Login</a>
-                </li>
-                <li class="logged-out">
-                    <a href="#" data-target="modal-signup">Sign up</a>
                 </li>
             </ul>
         </div>
     </nav>
+    
     </header>  
 
       <h1 class="title">Cloud Cafe</h1>
 
-        <div class="content">
+        <div class="content-list">
             <form id="add-cafe-form">
                 <input type="text" name="name" placeholder="Cafe name">
                 <input type="text" name="local" placeholder="Cafe locality">
@@ -48,6 +40,29 @@
 
         </div>
 
+    <!-- Sign UP
+    <form class="singup">
+        <label for="email">email: </label>
+        <input type="email" name="email">
+        <label for="password">senha: </label>
+        <input type="password" name="password">
+        
+        <button>Registrar</button>
+    </form>
+     Login 
+     <form class="login">
+        <label for="email">email: </label>
+        <input type="email" name="email">
+        <label for="password" >password: </label>
+        <input type="password" name="password">
+        <button>login</button>
+    </form> 
+    <button class="logout">logout</button>
+    --> 
+
+    
+
+    
     <script src="bundle.js" defer></script>
 </body>
 </html>

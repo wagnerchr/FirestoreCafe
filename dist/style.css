@@ -10,7 +10,7 @@ header {
     align-items: center;
     padding: 2.5px 10%;
 
-    background-color: purple;
+    background-color: white;
 }
 
 .nav-buttons li {
@@ -34,7 +34,7 @@ header {
 
 
 
-.content{
+.content-list{
     background: #fff;
     max-width: 960px;
     margin: 30px auto;
@@ -43,7 +43,7 @@ header {
     box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
 }
 
-ul{
+#cafe-list{
     list-style-type: none;
     padding: 0;
 }
@@ -52,7 +52,7 @@ ul{
     color: pink;
     height: 32141px;
 }
-li  {
+.cafe-li  {
     padding: 20px;
     background: #f6f6f6;
     font-size: 20px;
@@ -62,22 +62,22 @@ li  {
     height: 46px;
 }
 
-li:nth-child(even){
+.cafe-li:nth-child(even){
     padding: 20px;
     background: #f2f2f2;
 }
 
-li span{
+.cafe-li span{
     display: block;
 }
 
-li span:nth-child(2){
+.cafe-li span:nth-child(2){
     font-size: 16px;
     margin-top: 6px;
     color: #999;
 }
 
-li div{
+.cafe-li div{
     position: absolute;
     top: 0;
     right: 0px;
@@ -89,7 +89,7 @@ li div{
     cursor:  pointer;
 }
 
-form input{
+#add-cafe-form input{
     float: left;
     width: 38%;
     margin: 0;
@@ -102,14 +102,14 @@ form input{
     font-size: 18px;
 }
 
-form input:focus{
+#add-cafe-form input:focus{
     outline: none;
     border-bottom: 3px solid #88236f;
     padding-bottom: 8px;
     transition: all ease 0.2s;
 }
 
-form:after{
+#add-cafe-form:after{
     content: '';
     clear: both;
     display: block;
